@@ -1,8 +1,8 @@
 set IO_LENGTH 180
 set IO_WIDTH 80
 set BONDPAD_SIZE 70
-set MAX_NUM_HPADS 7
-set MAX_NUM_VPADS 1
+set MAX_NUM_HPADS 4
+set MAX_NUM_VPADS 3
 
 proc calc_horizontal_pad_location {index} {
     global IO_LENGTH
@@ -39,24 +39,22 @@ make_io_sites \
     -offset $BONDPAD_SIZE
 
 ######## Place Pads ########
-place_pad -row IO_EAST -location [calc_vertical_pad_location 0] {u_pad_io_tx} -master sg13g2_IOPadOut4mA
+place_pad -row IO_EAST -location [calc_vertical_pad_location 0] {u_pad_vddcore_0}
+place_pad -row IO_EAST -location [calc_vertical_pad_location 1] {u_pad_gndcore_0}
 
-place_pad -row IO_WEST -location [calc_vertical_pad_location 0] {u_pad_io_rx} -master sg13g2_IOPadIn
+place_pad -row IO_WEST -location [calc_vertical_pad_location 0] {u_pad_vddcore_1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 1] {u_pad_gndcore_1}
+place_pad -row IO_WEST -location [calc_vertical_pad_location 2] {u_pad_io_done}
 
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 0] {u_pad_vddpad_n0}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 1] {u_pad_gndpad_n0}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 2] {u_pad_vddcore_n0}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 3] {u_pad_gndcore_n0}
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 4] {u_pad_clk} -master sg13g2_IOPadIn
-place_pad -row IO_NORTH -location [calc_horizontal_pad_location 5] {u_pad_reset} -master sg13g2_IOPadIn
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 0] {u_pad_vddpad_0}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 1] {u_pad_gndpad_0}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 2] {u_pad_io_tx}
+place_pad -row IO_NORTH -location [calc_horizontal_pad_location 3] {u_pad_io_rx}
 
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 0] {u_pad_vddpad_s0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 1] {u_pad_gndpad_s0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 2] {u_pad_vddcore_s0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 3] {u_pad_gndcore_s0}
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 4] {u_pad_io_clk} -master sg13g2_IOPadIn
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 5] {u_pad_io_reset} -master sg13g2_IOPadIn
-place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 6] {u_pad_io_done} -master sg13g2_IOPadOut4mA
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 0] {u_pad_vddpad_1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 1] {u_pad_gndpad_1}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 2] {u_pad_io_clk}
+place_pad -row IO_SOUTH -location [calc_horizontal_pad_location 3] {u_pad_io_reset}
 
 # Place corners
 place_corners sg13g2_Corner

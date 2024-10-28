@@ -3,9 +3,7 @@ module MaskedAes (
   p_io_reset,
   p_io_tx,
   p_io_rx,
-  p_io_done,
-  p_clk,
-  p_reset
+  p_io_done
 );
 
   input  p_io_clk;
@@ -13,8 +11,6 @@ module MaskedAes (
   output p_io_tx;
   input  p_io_rx;
   output p_io_done;
-  input  p_clk;
-  input  p_reset;
 
   AesTb u_design (
     .io_clk(core_io_clk),
@@ -34,24 +30,26 @@ module MaskedAes (
   wire core_clk;
   wire core_reset;
 
+  // Unused wires
+  assign core_clk = 0;
+  assign core_reset = 0;
+
   (* keep *) sg13g2_IOPadIn u_pad_io_clk (.pad(p_io_clk), .p2c(core_io_clk)) ;
   (* keep *) sg13g2_IOPadIn u_pad_io_reset (.pad(p_io_reset), .p2c(core_io_reset)) ;
   (* keep *) sg13g2_IOPadOut4mA u_pad_io_tx (.pad(p_io_tx), .c2p(core_io_tx)) ;
   (* keep *) sg13g2_IOPadIn u_pad_io_rx (.pad(p_io_rx), .p2c(core_io_rx)) ;
   (* keep *) sg13g2_IOPadOut4mA u_pad_io_done (.pad(p_io_done), .c2p(core_io_done)) ;
-  (* keep *) sg13g2_IOPadIn u_pad_clk (.pad(p_clk), .p2c(core_clk)) ;
-  (* keep *) sg13g2_IOPadIn u_pad_reset (.pad(p_reset), .p2c(core_reset)) ;
 
-  (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_n0 () ;
-  (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_s0 () ;
+  (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_0 () ;
+  (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_1 () ;
 
-  (* keep *) sg13g2_IOPadVdd u_pad_vddcore_n0 () ;
-  (* keep *) sg13g2_IOPadVdd u_pad_vddcore_s0 () ;
+  (* keep *) sg13g2_IOPadVdd u_pad_vddcore_0 () ;
+  (* keep *) sg13g2_IOPadVdd u_pad_vddcore_1 () ;
 
-  (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_n0 () ;
-  (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_s0 () ;
+  (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_0 () ;
+  (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_1 () ;
 
-  (* keep *) sg13g2_IOPadVss u_pad_gndcore_n0 () ;
-  (* keep *) sg13g2_IOPadVss u_pad_gndcore_s0 () ;
+  (* keep *) sg13g2_IOPadVss u_pad_gndcore_0 () ;
+  (* keep *) sg13g2_IOPadVss u_pad_gndcore_1 () ;
 
 endmodule
