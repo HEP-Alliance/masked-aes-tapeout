@@ -25,4 +25,7 @@ add_pdn_stripe -grid {grid} -layer {Metal5}     -width {2.200} -pitch {75.6} -of
 add_pdn_stripe -grid {grid} -layer {TopMetal1}  -width {1.800} -pitch {75.6} -offset {13.570}             -extend_to_core_ring
 add_pdn_connect -grid {grid} -layers {Metal1 Metal5}
 add_pdn_connect -grid {grid} -layers {Metal5 TopMetal1}
+# I/O pads
+add_pdn_connect -grid {grid} -layers {Metal5 TopMetal2}
+add_pdn_connect -grid {grid} -layers {TopMetal1 TopMetal2}
 ####################################
