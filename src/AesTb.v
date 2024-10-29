@@ -1,6 +1,6 @@
 // Generator : SpinalHDL v1.10.1    git head : 2527c7c6b0fb0f95e5e1a5722a0be732b364ce43
 // Component : AesTb
-// Git hash  : b54ce0817580c240d1573cfb281e217f35c373ac
+// Git hash  : 40b01e91e00e653d35a730e75064f966357fa5ed
 
 `timescale 1ns/1ps
 
@@ -38,7 +38,6 @@ module AesTb (
   reg                 aESMaskedBlackBox_io_key2_valid;
   reg                 aESMaskedBlackBox_io_ct1_ready;
   reg                 aESMaskedBlackBox_io_ct2_ready;
-  wire       [27:0]   aESMaskedBlackBox_io_m;
   wire                uartCtrl_1_io_write_ready;
   wire                uartCtrl_1_io_read_valid;
   wire       [7:0]    uartCtrl_1_io_read_payload;
@@ -115,7 +114,7 @@ module AesTb (
     .io_ct2_payload  (aESMaskedBlackBox_io_ct2_payload[31:0] ), //o
     .io_ct2_valid    (aESMaskedBlackBox_io_ct2_valid         ), //o
     .io_ct2_ready    (aESMaskedBlackBox_io_ct2_ready         ), //i
-    .io_m            (aESMaskedBlackBox_io_m[27:0]           ), //i
+    .io_m            (lFSRArray_1_io_output[27:0]            ), //i
     .io_done         (aESMaskedBlackBox_io_done              )  //o
   );
   LFSRArray lFSRArray_1 (
@@ -395,7 +394,6 @@ module AesTb (
     endcase
   end
 
-  assign aESMaskedBlackBox_io_m = 28'h0000000;
   assign when_AesTb_l113 = (fsmstate == 3'b111);
   always @(*) begin
     if(when_AesTb_l113) begin
