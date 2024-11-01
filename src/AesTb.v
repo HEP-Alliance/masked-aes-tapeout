@@ -1,6 +1,6 @@
 // Generator : SpinalHDL v1.10.1    git head : 2527c7c6b0fb0f95e5e1a5722a0be732b364ce43
 // Component : AesTb
-// Git hash  : 40b01e91e00e653d35a730e75064f966357fa5ed
+// Git hash  : 7d71b394980eea21c4797418cfad392826f876d0
 
 `timescale 1ns/1ps
 
@@ -123,7 +123,7 @@ module AesTb (
     .io_reset  (io_reset                   )  //i
   );
   assign aesIsDone = 1'b0;
-  assign uartCtrl_1_io_config_clockDivider = 20'h0000a;
+  assign uartCtrl_1_io_config_clockDivider = 20'h00033;
   assign uartCtrl_1_io_config_frame_dataLength = 3'b111;
   assign uartCtrl_1_io_config_frame_parity = UartParityType_NONE;
   assign uartCtrl_1_io_config_frame_stop = UartStopType_ONE;

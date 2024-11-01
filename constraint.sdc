@@ -24,13 +24,13 @@ set_driving_cell -lib_cell sg13g2_IOPadIn -pin pad $io_clk_input_ports
 set_driving_cell -lib_cell sg13g2_IOPadOut4mA -pin pad $io_clk_output_ports
 
 set_ideal_network [get_pins u_pad_io_clk/p2c]
-create_clock [get_pins u_pad_io_clk/p2c] -name p_io_clk -period 48 -waveform {0 24}
+create_clock [get_pins u_pad_io_clk/p2c] -name p_io_clk -period 20.8333333
 set_clock_uncertainty 0.15 [get_clocks p_io_clk]
 set_clock_transition 0.25 [get_clocks p_io_clk]
 
-set_input_delay  8 -clock p_io_clk [get_ports { p_io_clk }]
-set_input_delay  8 -clock p_io_clk $io_clk_input_ports
-set_output_delay 8 -clock p_io_clk $io_clk_output_ports
+set_input_delay  2 -clock p_io_clk [get_ports { p_io_clk }]
+set_input_delay  2 -clock p_io_clk $io_clk_input_ports
+set_output_delay 2 -clock p_io_clk $io_clk_output_ports
 
 set_load -pin_load 5 [all_inputs]
 set_load -pin_load 5 [all_outputs]
