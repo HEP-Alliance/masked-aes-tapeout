@@ -19,5 +19,3 @@ export SEAL_GDS = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/sealring.gds
 # Total margin to core area: 270um
 export DIE_AREA  =   0   0 940 940
 export CORE_AREA = 270 270 670 670
-
-export USE_FILL = 1
