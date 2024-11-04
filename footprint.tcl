@@ -1,7 +1,7 @@
 set IO_LENGTH 180
 set BONDPAD_SIZE 70
 
-# IOLib.lef defines sg13g2_ioSite for the sides, but no corner site
+# sg13g2_io.lef defines sg13g2_ioSite for the sides, but no corner site
 make_fake_io_site -name sg13g2_ioCSite -width $IO_LENGTH -height $IO_LENGTH
 
 # Create IO Rows
