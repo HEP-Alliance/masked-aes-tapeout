@@ -8,6 +8,18 @@ The masked AES was built from here: https://github.com/HEP-Alliance/MaskedAesTes
 
 To build the ASIC, set up OpenROAD-flow-scripts, clone this repository as `<ORFS-Root>/flow/designs/ihp-sg13g2/masked_aes` and run the build like any other ORFS design.
 
+### Sealring
+
+The sealring was generated using a script included with IHP's open PDK.
+
+Clone the PDK and set up the technology in KLayout. The following command creates the sealring:
+
+```sh
+$ klayout -n sg13g2 -zz -r <IHP-repo-root>/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py -rd width=1060.0 -rd height=1060.0 -rd output=sealring.gds
+```
+
+The generated sealring has to be moved by -60 in both directions, which can be done in KLayout.
+
 ## Caveats
 
 Information on steps that are not fully automated yet as well as known issues.
