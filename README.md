@@ -4,6 +4,11 @@
 
 The masked AES was built from here: https://github.com/HEP-Alliance/MaskedAesTestbed
 
+```sh
+$ nix-shell
+> mill tb.runMain tb.AesTbMasked
+```
+
 ## The ASIC
 
 To build the ASIC, set up OpenROAD-flow-scripts, clone this repository as `<ORFS-Root>/flow/designs/ihp-sg13g2/masked_aes` and run the build like any other ORFS design.

@@ -1,10 +1,10 @@
 export DESIGN_NICKNAME = masked_aes
-export DESIGN_NAME = MaskedAes
+export DESIGN_NAME = MaskedAesTop
 export PLATFORM = ihp-sg13g2
 
-export VERILOG_FILES = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/MaskedAes.v \
-                       ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/AesTb.v \
-                       ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/AES_Masked.v
+export VERILOG_FILES = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/MaskedAesTop.v \
+                       ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/AesTbMasked.v \
+                       ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/src/AesMasked.v
 
 export SDC_FILE = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 

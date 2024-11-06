@@ -1,4 +1,4 @@
-module MaskedAes (
+module MaskedAesTop (
   p_io_clk,
   p_io_reset,
   p_io_tx,
@@ -12,7 +12,7 @@ module MaskedAes (
   input  p_io_rx;
   output p_io_done;
 
-  AesTb u_design (
+  AesTbMasked u_design (
     .io_clk(core_io_clk),
     .io_reset(core_io_reset),
     .io_tx(core_io_tx),

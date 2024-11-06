@@ -1,10 +1,10 @@
 // Generator : SpinalHDL v1.10.1    git head : 2527c7c6b0fb0f95e5e1a5722a0be732b364ce43
-// Component : AesTb
-// Git hash  : 7d71b394980eea21c4797418cfad392826f876d0
+// Component : AesTbMasked
+// Git hash  : eecec90642688a29c443f96b819ec0521172cca7
 
 `timescale 1ns/1ps
 
-module AesTb (
+module AesTbMasked (
   input  wire          io_clk,
   input  wire          io_reset,
   output wire          io_tx,
@@ -60,18 +60,18 @@ module AesTb (
   reg        [2:0]    wordcount;
   reg        [2:0]    fsmstate;
   reg                 waiting;
-  wire                when_AesTb_l113;
-  wire                when_AesTb_l120;
-  wire                when_AesTb_l128;
-  wire                when_AesTb_l129;
-  wire                when_AesTb_l140;
-  wire                when_AesTb_l144;
-  wire                when_AesTb_l153;
-  wire                when_AesTb_l159;
-  wire                when_AesTb_l165;
-  wire                when_AesTb_l171;
-  wire                when_AesTb_l185;
-  wire                when_AesTb_l192;
+  wire                when_AesTb_l245;
+  wire                when_AesTb_l252;
+  wire                when_AesTb_l260;
+  wire                when_AesTb_l261;
+  wire                when_AesTb_l272;
+  wire                when_AesTb_l276;
+  wire                when_AesTb_l285;
+  wire                when_AesTb_l291;
+  wire                when_AesTb_l297;
+  wire                when_AesTb_l303;
+  wire                when_AesTb_l317;
+  wire                when_AesTb_l324;
 
   UartCtrl uartCtrl_1 (
     .io_config_frame_dataLength (uartCtrl_1_io_config_frame_dataLength[2:0]), //i
@@ -92,7 +92,7 @@ module AesTb (
     .io_clk                     (io_clk                                    ), //i
     .io_reset                   (io_reset                                  )  //i
   );
-  AES_Masked aESMaskedBlackBox (
+  AesMasked aESMaskedBlackBox (
     .io_clk          (io_clk                                 ), //i
     .io_reset        (io_reset                               ), //i
     .io_enable       (aESMaskedBlackBox_io_enable            ), //i
@@ -131,14 +131,14 @@ module AesTb (
   assign io_tx = uartCtrl_1_io_uart_txd;
   always @(*) begin
     uartCtrl_1_io_write_payload = 8'h00;
-    if(when_AesTb_l128) begin
+    if(when_AesTb_l260) begin
       uartCtrl_1_io_write_payload = trexbuffer[31 : 24];
     end
   end
 
   always @(*) begin
     uartCtrl_1_io_write_valid = 1'b0;
-    if(when_AesTb_l128) begin
+    if(when_AesTb_l260) begin
       uartCtrl_1_io_write_valid = 1'b1;
     end
   end
@@ -152,7 +152,7 @@ module AesTb (
       3'b001 : begin
       end
       3'b010 : begin
-        if(when_AesTb_l165) begin
+        if(when_AesTb_l297) begin
           aESMaskedBlackBox_io_pt1_payload = trexbuffer;
         end
       end
@@ -179,7 +179,7 @@ module AesTb (
       3'b010 : begin
       end
       3'b011 : begin
-        if(when_AesTb_l171) begin
+        if(when_AesTb_l303) begin
           aESMaskedBlackBox_io_pt2_payload = trexbuffer;
         end
       end
@@ -198,7 +198,7 @@ module AesTb (
     aESMaskedBlackBox_io_key1_payload = 32'h00000000;
     case(fsmstate)
       3'b000 : begin
-        if(when_AesTb_l153) begin
+        if(when_AesTb_l285) begin
           aESMaskedBlackBox_io_key1_payload = trexbuffer;
         end
       end
@@ -225,7 +225,7 @@ module AesTb (
       3'b000 : begin
       end
       3'b001 : begin
-        if(when_AesTb_l159) begin
+        if(when_AesTb_l291) begin
           aESMaskedBlackBox_io_key2_payload = trexbuffer;
         end
       end
@@ -252,7 +252,7 @@ module AesTb (
       3'b001 : begin
       end
       3'b010 : begin
-        if(when_AesTb_l165) begin
+        if(when_AesTb_l297) begin
           aESMaskedBlackBox_io_pt1_valid = 1'b1;
         end
       end
@@ -279,7 +279,7 @@ module AesTb (
       3'b010 : begin
       end
       3'b011 : begin
-        if(when_AesTb_l171) begin
+        if(when_AesTb_l303) begin
           aESMaskedBlackBox_io_pt2_valid = 1'b1;
         end
       end
@@ -298,7 +298,7 @@ module AesTb (
     aESMaskedBlackBox_io_key1_valid = 1'b0;
     case(fsmstate)
       3'b000 : begin
-        if(when_AesTb_l153) begin
+        if(when_AesTb_l285) begin
           aESMaskedBlackBox_io_key1_valid = 1'b1;
         end
       end
@@ -325,7 +325,7 @@ module AesTb (
       3'b000 : begin
       end
       3'b001 : begin
-        if(when_AesTb_l159) begin
+        if(when_AesTb_l291) begin
           aESMaskedBlackBox_io_key2_valid = 1'b1;
         end
       end
@@ -358,7 +358,7 @@ module AesTb (
       3'b100 : begin
       end
       3'b101 : begin
-        if(when_AesTb_l185) begin
+        if(when_AesTb_l317) begin
           aESMaskedBlackBox_io_ct1_ready = 1'b1;
         end
       end
@@ -385,7 +385,7 @@ module AesTb (
       3'b101 : begin
       end
       3'b110 : begin
-        if(when_AesTb_l192) begin
+        if(when_AesTb_l324) begin
           aESMaskedBlackBox_io_ct2_ready = 1'b1;
         end
       end
@@ -394,26 +394,26 @@ module AesTb (
     endcase
   end
 
-  assign when_AesTb_l113 = (fsmstate == 3'b111);
+  assign when_AesTb_l245 = (fsmstate == 3'b111);
   always @(*) begin
-    if(when_AesTb_l113) begin
+    if(when_AesTb_l245) begin
       io_done = 1'b1;
     end else begin
       io_done = 1'b0;
     end
   end
 
-  assign when_AesTb_l120 = (uartCtrl_1_io_read_valid && (fsmstate < 3'b100));
-  assign when_AesTb_l128 = (3'b100 < fsmstate);
-  assign when_AesTb_l129 = (uartCtrl_1_io_write_ready && waiting);
-  assign when_AesTb_l140 = (bytecount == 3'b100);
-  assign when_AesTb_l144 = (wordcount == 3'b011);
-  assign when_AesTb_l153 = (bytecount == 3'b100);
-  assign when_AesTb_l159 = (bytecount == 3'b100);
-  assign when_AesTb_l165 = (bytecount == 3'b100);
-  assign when_AesTb_l171 = (bytecount == 3'b100);
-  assign when_AesTb_l185 = (aESMaskedBlackBox_io_ct1_valid && (! waiting));
-  assign when_AesTb_l192 = (aESMaskedBlackBox_io_ct2_valid && (! waiting));
+  assign when_AesTb_l252 = (uartCtrl_1_io_read_valid && (fsmstate < 3'b100));
+  assign when_AesTb_l260 = (3'b100 < fsmstate);
+  assign when_AesTb_l261 = (uartCtrl_1_io_write_ready && waiting);
+  assign when_AesTb_l272 = (bytecount == 3'b100);
+  assign when_AesTb_l276 = (wordcount == 3'b011);
+  assign when_AesTb_l285 = (bytecount == 3'b100);
+  assign when_AesTb_l291 = (bytecount == 3'b100);
+  assign when_AesTb_l297 = (bytecount == 3'b100);
+  assign when_AesTb_l303 = (bytecount == 3'b100);
+  assign when_AesTb_l317 = (aESMaskedBlackBox_io_ct1_valid && (! waiting));
+  assign when_AesTb_l324 = (aESMaskedBlackBox_io_ct2_valid && (! waiting));
   always @(posedge io_clk or posedge io_reset) begin
     if(io_reset) begin
       trexbuffer <= 32'h00000000;
@@ -422,22 +422,22 @@ module AesTb (
       fsmstate <= 3'b000;
       waiting <= 1'b0;
     end else begin
-      if(when_AesTb_l120) begin
+      if(when_AesTb_l252) begin
         bytecount <= (bytecount + 3'b001);
         trexbuffer[31 : 8] <= trexbuffer[23 : 0];
         trexbuffer[7 : 0] <= uartCtrl_1_io_read_payload;
       end
-      if(when_AesTb_l128) begin
-        if(when_AesTb_l129) begin
+      if(when_AesTb_l260) begin
+        if(when_AesTb_l261) begin
           bytecount <= (bytecount + 3'b001);
           trexbuffer[31 : 8] <= trexbuffer[23 : 0];
         end
       end
-      if(when_AesTb_l140) begin
+      if(when_AesTb_l272) begin
         waiting <= 1'b0;
         bytecount <= 3'b000;
         wordcount <= (wordcount + 3'b001);
-        if(when_AesTb_l144) begin
+        if(when_AesTb_l276) begin
           fsmstate <= (fsmstate + 3'b001);
           wordcount <= 3'b000;
         end
@@ -459,13 +459,13 @@ module AesTb (
           end
         end
         3'b101 : begin
-          if(when_AesTb_l185) begin
+          if(when_AesTb_l317) begin
             trexbuffer <= aESMaskedBlackBox_io_ct1_payload;
             waiting <= 1'b1;
           end
         end
         3'b110 : begin
-          if(when_AesTb_l192) begin
+          if(when_AesTb_l324) begin
             trexbuffer <= aESMaskedBlackBox_io_ct2_payload;
             waiting <= 1'b1;
           end
