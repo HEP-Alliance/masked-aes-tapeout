@@ -17,5 +17,5 @@ export SEAL_GDS = ./designs/$(PLATFORM)/$(DESIGN_NICKNAME)/sealring.gds
 # Bondpads: 70um
 # Margin for core power ring: 20um
 # Total margin to core area: 270um
-export DIE_AREA  =   0   0 940 940
-export CORE_AREA = 270 270 670 670
+export DIE_AREA  =   0   0 945 945
+export CORE_AREA = 270 270 675 675

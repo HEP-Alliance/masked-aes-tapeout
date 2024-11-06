@@ -20,7 +20,7 @@ The sealring was generated using a script included with IHP's open PDK.
 Clone the PDK and set up the technology in KLayout. The following command creates the sealring:
 
 ```sh
-$ klayout -n sg13g2 -zz -r <IHP-repo-root>/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py -rd width=1060.0 -rd height=1060.0 -rd output=sealring.gds
+$ klayout -n sg13g2 -zz -r <IHP-repo-root>/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py -rd width=1065.0 -rd height=1065.0 -rd output=sealring.gds
 ```
 
 The generated sealring has to be moved by -60 in both directions, which can be done in KLayout.
