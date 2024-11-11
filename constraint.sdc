@@ -1,4 +1,4 @@
-current_design MaskedAesTop
+current_design AesTop
 
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
 set_max_fanout 20 [current_design]

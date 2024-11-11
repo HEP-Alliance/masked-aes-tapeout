@@ -1,12 +1,12 @@
-[OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts) design configuration for an ASIC implementing a masked AES with [IHP's open PDK](https://github.com/IHP-GmbH/IHP-Open-PDK).
+[OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts) design configuration for an ASIC implementing a AES with [IHP's open PDK](https://github.com/IHP-GmbH/IHP-Open-PDK).
 
 ## The Design
 
-The masked AES was built from here: https://github.com/HEP-Alliance/MaskedAesTestbed
+The AES was built from here: https://github.com/HEP-Alliance/MaskedAesTestbed
 
 ```sh
 $ nix-shell
-> mill tb.runMain tb.AesTbMasked
+> mill tb.runMain tb.AesTb
 ```
 
 ## The ASIC
@@ -20,7 +20,7 @@ The sealring was generated using a script included with IHP's open PDK.
 Clone the PDK and set up the technology in KLayout. The following command creates the sealring:
 
 ```sh
-$ klayout -n sg13g2 -zz -r <IHP-repo-root>/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py -rd width=1065.0 -rd height=1065.0 -rd output=sealring.gds
+$ klayout -n sg13g2 -zz -r <IHP-repo-root>/ihp-sg13g2/libs.tech/klayout/tech/scripts/sealring.py -rd width=1120.0 -rd height=810.0 -rd output=sealring.gds
 ```
 
 The generated sealring has to be moved by -60 in both directions, which can be done in KLayout.

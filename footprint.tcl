@@ -13,25 +13,19 @@ make_io_sites \
 
 ######## Place Pads ########
 place_pads -row IO_EAST \
+    u_pad_vddpad_0 \
+    u_pad_gndpad_0
+
+place_pads -row IO_WEST \
     u_pad_vddcore_0 \
     u_pad_gndcore_0
 
-place_pads -row IO_WEST \
-    u_pad_vddcore_1 \
-    u_pad_gndcore_1 \
-    u_pad_io_done
-
 place_pads -row IO_NORTH \
-    u_pad_vddpad_0 \
-    u_pad_gndpad_0 \
-    u_pad_io_tx \
-    u_pad_io_rx
-
-place_pads -row IO_SOUTH \
-    u_pad_vddpad_1 \
-    u_pad_gndpad_1 \
     u_pad_io_clk \
-    u_pad_io_reset
+    u_pad_io_reset \
+    u_pad_io_tx \
+    u_pad_io_rx \
+    u_pad_io_done
 
 # Place corners
 place_corners sg13g2_Corner
