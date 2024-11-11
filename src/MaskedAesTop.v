@@ -41,15 +41,8 @@ module MaskedAesTop (
   (* keep *) sg13g2_IOPadOut4mA u_pad_io_done (.pad(p_io_done), .c2p(core_io_done)) ;
 
   (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_0 () ;
-  (* keep *) sg13g2_IOPadIOVdd u_pad_vddpad_1 () ;
-
   (* keep *) sg13g2_IOPadVdd u_pad_vddcore_0 () ;
-  (* keep *) sg13g2_IOPadVdd u_pad_vddcore_1 () ;
-
   (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_0 () ;
-  (* keep *) sg13g2_IOPadIOVss u_pad_gndpad_1 () ;
-
   (* keep *) sg13g2_IOPadVss u_pad_gndcore_0 () ;
-  (* keep *) sg13g2_IOPadVss u_pad_gndcore_1 () ;
 
 endmodule
